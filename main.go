@@ -66,7 +66,7 @@ func main() {
 	ctx := context.Background()
 
 	if err := migrate(ctx); err != nil {
-		log.Fatalln(err.Error)
+		log.Fatalln(err.Error())
 	}
 
 	end := time.Now()
