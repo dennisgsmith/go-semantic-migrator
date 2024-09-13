@@ -181,17 +181,12 @@ func (s migrationService) migrate(ctx context.Context, args Options) error {
 	log.Printf("validating %d migrations...", len(history))
 	for _, f := range schemas {
 		n := f.Name()
-		nn := strings.Split(n, "__")
-		if len(nn) != 2 {
-			return errors.New("all schemas must contain exactly one double underscore (example: V0.0.1__init.sql)")
-		}
-
 		v, err := extractVersion(n)
 		if err != nil {
 			return err
 		}
 		if err != nil {
-			return fmt.Errorf("invalid version prefix: '%s'", nn[0])
+			return fmt.Errorf("invalid version prefix: '%s'", n)
 		}
 
 		m, exists := sh[n]
