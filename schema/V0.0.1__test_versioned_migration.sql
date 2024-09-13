@@ -1,3 +1,3 @@
 CREATE TABLE foo (
-	bar text
+  bar text
 );

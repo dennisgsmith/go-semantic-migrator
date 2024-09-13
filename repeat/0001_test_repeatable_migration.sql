@@ -1,3 +1,3 @@
 CREATE OR REPLACE VIEW v_foo AS (
-	SELECT * FROM foo
+  SELECT * FROM foo
 );
